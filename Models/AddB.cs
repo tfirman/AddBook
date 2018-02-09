@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace AddressBook.Models
+namespace AddBook.Models
 {
     public class Contact
     {

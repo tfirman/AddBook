@@ -5,17 +5,5 @@
     </head>
     <body>
         <h1>Your Address Book</h1>
-        <a href="/new"><button type="button" name="button">Add an address</button></a>
-        <ul>
-            @using AddressBook.Models;
-            @foreach (Contact contact in Model)
-            {
-                string hrefString = "/contact/" + @contact.GetID();
-                <li><a href=@hrefString>@contact.GetName()</a></li>
-            }
-        </ul>
-        <form id="form" action="/" method="post">
-            <button type="submit">clear</button>
-        </form>
     </body>
 </html>
