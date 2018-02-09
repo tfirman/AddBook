@@ -49,5 +49,15 @@ namespace AddB.Controllers
             }
         }
 
+        [HttpPost("/contact/{id}")]
+        public ActionResult Delete(int id)
+        {
+            Contact contact = Contact.GetById(id);
+            if(contact != null)
+            {
+                Contact.RemoveById(id);
+            }
+            return View("Index", Contact.GetAll());
+        }
     }
 }
