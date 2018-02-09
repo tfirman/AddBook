@@ -5,14 +5,14 @@ namespace AddBook.Models
     public class Contact
     {
         private string _name;
-        private int _phoneNumber;
+        private long _phoneNumber;
         private string _address;
         private int _id;
         private static int ID = 0;
 
         private static List<Contact> _instances = new List<Contact>();
 
-        public Contact(string name, int phoneNumber, string address = "")
+        public Contact(string name, long phoneNumber, string address = "")
         {
             _name = name;
             _phoneNumber = phoneNumber;
@@ -26,7 +26,7 @@ namespace AddBook.Models
             return _name;
         }
 
-        public int GetPhoneNumber()
+        public long GetPhoneNumber()
         {
             return _phoneNumber;
         }

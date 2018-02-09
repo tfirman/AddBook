@@ -4,10 +4,11 @@
         <title>Contact Detail</title>
     </head>
     <body>
-        <h1>@Model.Name()</h1>
+        @using AddBook.Models;
+        <h1>@Model.GetName()</h1>
         <h3>Phone Number: @Model.GetPhoneNumber()</h3>
         <h5>Address: @Model.GetAddress()</h5>
-        
+
         <a href="/">Back to car list</a>
     </body>
 </html>
