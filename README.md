@@ -6,19 +6,15 @@
 
 ## Description
 
-_This is a C# Application that operates a local website that takes input from the user to create an address book.  The user is asked for a name, a phone number, and an address for each entry.  The user can delete the entire list.  The user can also click on an individual entry to see detailed information and is there presented with the option to delete an individual entry._
-
-## Specifications
-
-* Program outputs
+_This is a C# Application that operates a local website that takes input from the user to create an address book.  The user is asked for a name, a phone number, a street address, a city, a state, and a Zip code for each entry.  The user is presented with a list of links of each of the Contact names.  The user can delete the entire list.  The user can also click on an individual entry to see detailed information and is there presented with the option to delete that individual entry._
 
 ## Setup/Installation Requirements
 
-_This software is a C# web server, and would need to have a "dotnet restore" to the root directory followed by execution using dotnet run._
+_This software is a C# web server, and would need the obj and bin directories restored (dotnet restore) and built._
 
 ## Known Bugs
 
-Though the server does successfully delete individual entries when the delete this entry button is pressed on the detail screen, there is an error in rendering the page thereafter.  The functionality of the deletion does work, as can be seen if the user manually goes back to the root page.  As this was an optional feature anyhow it has been left in to demonstrate the partial functionality.
+None Known
 
 ## Technologies Used
 
