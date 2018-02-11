@@ -7,7 +7,7 @@
         @using AddBook.Models;
         <h1>@Model.GetName()</h1>
         <h3>Phone Number: @Model.GetPhoneNumber()</h3>
-        <h5>Address: @Model.GetAddress().GetStreetAddress(),@Model.GetAddress().GetCity(),@Model.GetAddress().GetState(),@Model.GetAddress().GetZipCode()</h5>
+        <h5>Address: @Model.GetAddress().GetStreetAddress(), @Model.GetAddress().GetCity(), @Model.GetAddress().GetState(), @Model.GetAddress().GetZipCode()</h5>
 
         <form id="form" action="/contact/@Model.GetId()" method="post">
             <button type="submit">Delete this contact</button>

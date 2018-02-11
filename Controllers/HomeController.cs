@@ -18,49 +18,5 @@ namespace AddB.Controllers
             Contact.DeleteList();
             return View("Index", Contact.GetAll());
         }
-
-
-        [HttpGet("/new")]
-        public ActionResult New()
-        {
-            return View();
-        }
-
-        [HttpPost("/new")]
-        public ActionResult AddContact()
-        {
-            string name = Request.Form["name"];
-            long phoneNumber = Int64.Parse(Request.Form["phone-number"]);
-            string streetAddress = Request.Form["street-address"];
-            string city = Request.Form["city"];
-            string state = Request.Form["state"];
-            int zipCode = Int32.Parse(Request.Form["zip-code"]);
-            Contact newContact = new Contact(name, phoneNumber, streetAddress, city, state, zipCode);
-            return View("Index", Contact.GetAll());
-        }
-
-        [HttpGet("/contact/{id}")]
-        public ActionResult Details(int id)
-        {
-            Contact contact = Contact.GetById(id);
-            if(contact != null)
-            {
-                return View(contact);
-            } else
-            {
-                return View("Error, that Contact doesn't exist");
-            }
-        }
-
-        [HttpPost("/contact/{id}")]
-        public ActionResult Delete(int id)
-        {
-            Contact contact = Contact.GetById(id);
-            if(contact != null)
-            {
-                Contact.RemoveById(id);
-            }
-            return View("Index", Contact.GetAll());
-        }
     }
 }

@@ -65,14 +65,13 @@ namespace AddBook.Models
 
         public static void RemoveById(int id)
         {
-            foreach (Contact contact in _instances)
+            for (int i = _instances.Count -1; i >= 0; i--)
             {
-                if (contact.GetId() == id)
+                if (_instances[i].GetId() == id)
                 {
-                    _instances.Remove(contact);
+                    _instances.RemoveAt(i);
                 }
             }
         }
-
     }
 }
