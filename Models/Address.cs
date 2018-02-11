@@ -7,11 +7,11 @@ namespace AddBook.Models
         private string _streetAddress;
         private string _city;
         private string _state;
-        private string _zipCode;
+        private int _zipCode;
         private int _id;
-        private static List<Address> _instances = new List<Address>();
+        private static List<Address> _addresses = new List<Address>();
 
-        public Address(string streetAddress, string city, string state, string zipCode, int id)
+        public Address(string streetAddress, string city, string state, int zipCode, int id)
         {
             _streetAddress = streetAddress;
             _city = city;
@@ -27,7 +27,7 @@ namespace AddBook.Models
 
         public static Address GetById(int id)
         {
-            foreach (Address address in _instances)
+            foreach (Address address in _addresses)
             {
                 if (address.GetId() == id)
                 {
@@ -36,5 +36,26 @@ namespace AddBook.Models
             }
             return null;
         }
+
+        public string GetStreetAddress()
+        {
+            return _streetAddress;
+        }
+
+        public string GetCity()
+        {
+            return _city;
+        }
+
+        public string GetState()
+        {
+            return _state;
+        }
+
+        public int GetZipCode()
+        {
+            return _zipCode;
+        }
+
     }
 }

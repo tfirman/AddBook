@@ -6,19 +6,19 @@ namespace AddBook.Models
     {
         private string _name;
         private long _phoneNumber;
-        private string _address;
+        private Address _address;
         private int _id;
         private static int ID = 0;
 
         private static List<Contact> _instances = new List<Contact>();
 
-        public Contact(string name, long phoneNumber, string address = "")
+        public Contact(string name, long phoneNumber, string streetAddress, string city, string state, int zipCode)
         {
             _name = name;
             _phoneNumber = phoneNumber;
-            _address = address;
             _instances.Add(this);
             _id = ID++;
+            _address = new Address(streetAddress, city, state, zipCode, _id);
         }
 
         public string GetName()
@@ -31,7 +31,7 @@ namespace AddBook.Models
             return _phoneNumber;
         }
 
-        public string GetAddress()
+        public Address GetAddress()
         {
             return _address;
         }

@@ -31,8 +31,11 @@ namespace AddB.Controllers
         {
             string name = Request.Form["name"];
             long phoneNumber = Int64.Parse(Request.Form["phone-number"]);
-            string address = Request.Form["address"];
-            Contact newContact = new Contact(name, phoneNumber, address);
+            string streetAddress = Request.Form["street-address"];
+            string city = Request.Form["city"];
+            string state = Request.Form["state"];
+            int zipCode = Int32.Parse(Request.Form["zip-code"]);
+            Contact newContact = new Contact(name, phoneNumber, streetAddress, city, state, zipCode);
             return View("Index", Contact.GetAll());
         }
 
